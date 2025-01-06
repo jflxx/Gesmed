@@ -1,0 +1,223 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="https://services.gesmed.pucp.edu.pe" targetNamespace="https://services.gesmed.pucp.edu.pe" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Exception" type="tns:Exception" />
+  <xs:element name="actualizarVisita" type="tns:actualizarVisita" />
+  <xs:element name="actualizarVisitaResponse" type="tns:actualizarVisitaResponse" />
+  <xs:element name="completarVisita" type="tns:completarVisita" />
+  <xs:element name="completarVisitaResponse" type="tns:completarVisitaResponse" />
+  <xs:element name="eliminarVisita" type="tns:eliminarVisita" />
+  <xs:element name="eliminarVisitaResponse" type="tns:eliminarVisitaResponse" />
+  <xs:element name="insertarVisita" type="tns:insertarVisita" />
+  <xs:element name="insertarVisitaResponse" type="tns:insertarVisitaResponse" />
+  <xs:element name="listarPorCliente" type="tns:listarPorCliente" />
+  <xs:element name="listarPorClienteResponse" type="tns:listarPorClienteResponse" />
+  <xs:element name="listarPorIDRepresentante" type="tns:listarPorIDRepresentante" />
+  <xs:element name="listarPorIDRepresentanteResponse" type="tns:listarPorIDRepresentanteResponse" />
+  <xs:element name="listarPorRepresentante" type="tns:listarPorRepresentante" />
+  <xs:element name="listarPorRepresentanteResponse" type="tns:listarPorRepresentanteResponse" />
+  <xs:element name="listarPorTipo" type="tns:listarPorTipo" />
+  <xs:element name="listarPorTipoResponse" type="tns:listarPorTipoResponse" />
+  <xs:element name="listarVisita" type="tns:listarVisita" />
+  <xs:element name="listarVisitaResponse" type="tns:listarVisitaResponse" />
+  <xs:element name="obtenerPorID" type="tns:obtenerPorID" />
+  <xs:element name="obtenerPorIDResponse" type="tns:obtenerPorIDResponse" />
+  <xs:complexType name="eliminarVisita">
+    <xs:sequence>
+      <xs:element name="idVisita" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarVisitaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="completarVisita">
+    <xs:sequence>
+      <xs:element name="idVisita" type="xs:int" />
+      <xs:element name="idRepresentante" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="completarVisitaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPorIDRepresentante">
+    <xs:sequence>
+      <xs:element name="idRepresentante" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPorIDRepresentanteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:visita" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="visita">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cliente" type="tns:cliente" />
+      <xs:element minOccurs="0" name="detallesVisita" type="xs:string" />
+      <xs:element minOccurs="0" name="estado" type="tns:estadoVisita" />
+      <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="hora" type="xs:dateTime" />
+      <xs:element name="idVisita" type="xs:int" />
+      <xs:element minOccurs="0" name="representante" type="tns:representanteMedico" />
+      <xs:element minOccurs="0" name="tipoVisita" type="tns:tipoVisita" />
+      <xs:element minOccurs="0" name="ubicacionFinal" type="tns:ubicacion" />
+      <xs:element minOccurs="0" name="ubicacionInicial" type="tns:ubicacion" />
+      <xs:element name="visitado" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cliente">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:persona">
+        <xs:sequence>
+          <xs:element name="idAdmin" type="xs:int" />
+          <xs:element name="idCliente" type="xs:int" />
+          <xs:element name="idSupervisor" type="xs:int" />
+          <xs:element name="tipo" type="xs:unsignedShort" />
+          <xs:element minOccurs="0" name="ubicacion" type="tns:ubicacion" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="persona" abstract="true">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:int" />
+      <xs:element minOccurs="0" name="apellidoMaterno" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidoPaterno" type="xs:string" />
+      <xs:element minOccurs="0" name="correo" type="xs:string" />
+      <xs:element name="DNI" type="xs:int" />
+      <xs:element name="idPersona" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="numero" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ubicacion">
+    <xs:sequence>
+      <xs:element name="altitud" type="xs:double" />
+      <xs:element name="idUbicacion" type="xs:int" />
+      <xs:element name="latitud" type="xs:double" />
+      <xs:element name="longitud" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="representanteMedico">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:trabajador">
+        <xs:sequence>
+          <xs:element name="contadorVisitas" type="xs:int" />
+          <xs:element name="fidSupervisor" type="xs:int" />
+          <xs:element name="idRepresentanteMedico" type="xs:int" />
+          <xs:element name="KPI" type="xs:double" />
+          <xs:element minOccurs="0" name="subZona" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="visitas" nillable="true" type="tns:visita" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="trabajador" abstract="true">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:persona">
+        <xs:sequence>
+          <xs:element name="fidPersona" type="xs:int" />
+          <xs:element minOccurs="0" name="idTrabajador" type="tns:usuario" />
+          <xs:element name="rol" type="xs:unsignedShort" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="usuario">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="idUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="user" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerPorID">
+    <xs:sequence>
+      <xs:element name="idVisita" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerPorIDResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:visita" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarVisita">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarVisitaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:visita" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPorCliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPorClienteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:visita" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPorTipo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tipo" type="tns:tipoVisita" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPorTipoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:visita" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPorRepresentante">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarPorRepresentanteResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:visita" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarVisita">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="visita" type="tns:visita" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarVisitaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarVisita">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="visita" type="tns:visita" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarVisitaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="estadoVisita">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CANCELADO" />
+      <xs:enumeration value="FINALIZADO" />
+      <xs:enumeration value="EN_PROGRESO" />
+      <xs:enumeration value="PROGRAMADA" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoVisita">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="GEORREFERENCIA" />
+      <xs:enumeration value="GEOLOCALIZACION" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

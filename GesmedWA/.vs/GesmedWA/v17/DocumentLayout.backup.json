@@ -1,0 +1,155 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Alfredo\\Documents\\GitHub\\Programacion-3\\Frontend\\GesmedWA\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{92B768A1-9ABC-480C-822C-691A8ADE88E2}|GesmedWA\\GesmedWA.csproj|c:\\users\\alfredo\\documents\\github\\programacion-3\\frontend\\gesmedwa\\gesmedwa\\views\\login\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92B768A1-9ABC-480C-822C-691A8ADE88E2}|GesmedWA\\GesmedWA.csproj|solutionrelative:gesmedwa\\views\\login\\login.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92B768A1-9ABC-480C-822C-691A8ADE88E2}|GesmedWA\\GesmedWA.csproj|c:\\users\\alfredo\\documents\\github\\programacion-3\\frontend\\gesmedwa\\gesmedwa\\views\\recursos\\listasupervisores.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92B768A1-9ABC-480C-822C-691A8ADE88E2}|GesmedWA\\GesmedWA.csproj|solutionrelative:gesmedwa\\views\\recursos\\listasupervisores.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92B768A1-9ABC-480C-822C-691A8ADE88E2}|GesmedWA\\GesmedWA.csproj|C:\\Users\\Alfredo\\Documents\\GitHub\\Programacion-3\\Frontend\\GesmedWA\\gesmedwa\\views\\recursos\\gestionfarmacias.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92B768A1-9ABC-480C-822C-691A8ADE88E2}|GesmedWA\\GesmedWA.csproj|solutionrelative:gesmedwa\\views\\recursos\\gestionfarmacias.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92B768A1-9ABC-480C-822C-691A8ADE88E2}|GesmedWA\\GesmedWA.csproj|C:\\Users\\Alfredo\\Documents\\GitHub\\Programacion-3\\Frontend\\GesmedWA\\gesmedwa\\views\\ventas\\gestionvisitas.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92B768A1-9ABC-480C-822C-691A8ADE88E2}|GesmedWA\\GesmedWA.csproj|solutionrelative:gesmedwa\\views\\ventas\\gestionvisitas.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92B768A1-9ABC-480C-822C-691A8ADE88E2}|GesmedWA\\GesmedWA.csproj|C:\\Users\\Alfredo\\Documents\\GitHub\\Programacion-3\\Frontend\\GesmedWA\\gesmedwa\\views\\ventas\\gestionvisitas.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{92B768A1-9ABC-480C-822C-691A8ADE88E2}|GesmedWA\\GesmedWA.csproj|solutionrelative:gesmedwa\\views\\ventas\\gestionvisitas.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92B768A1-9ABC-480C-822C-691A8ADE88E2}|GesmedWA\\GesmedWA.csproj|C:\\Users\\Alfredo\\Documents\\GitHub\\Programacion-3\\Frontend\\GesmedWA\\gesmedwa\\views\\recursos\\listarepresentantes.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{92B768A1-9ABC-480C-822C-691A8ADE88E2}|GesmedWA\\GesmedWA.csproj|solutionrelative:gesmedwa\\views\\recursos\\listarepresentantes.aspx.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92B768A1-9ABC-480C-822C-691A8ADE88E2}|GesmedWA\\GesmedWA.csproj|C:\\Users\\Alfredo\\Documents\\GitHub\\Programacion-3\\Frontend\\GesmedWA\\gesmedwa\\views\\recursos\\listarepresentantes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{92B768A1-9ABC-480C-822C-691A8ADE88E2}|GesmedWA\\GesmedWA.csproj|solutionrelative:gesmedwa\\views\\recursos\\listarepresentantes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{92B768A1-9ABC-480C-822C-691A8ADE88E2}|GesmedWA\\GesmedWA.csproj|C:\\Users\\Alfredo\\Documents\\GitHub\\Programacion-3\\Frontend\\GesmedWA\\gesmedwa\\views\\recursos\\gestionrepresentantes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}",
+      "RelativeMoniker": "D:0:0:{92B768A1-9ABC-480C-822C-691A8ADE88E2}|GesmedWA\\GesmedWA.csproj|solutionrelative:gesmedwa\\views\\recursos\\gestionrepresentantes.aspx||{57312C73-6202-49E9-B1E1-40EA1A6DC1F6}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Login.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Alfredo\\Documents\\GitHub\\Programacion-3\\Frontend\\GesmedWA\\GesmedWA\\Views\\Login\\Login.aspx.cs",
+              "RelativeDocumentMoniker": "GesmedWA\\Views\\Login\\Login.aspx.cs",
+              "ToolTip": "C:\\Users\\Alfredo\\Documents\\GitHub\\Programacion-3\\Frontend\\GesmedWA\\GesmedWA\\Views\\Login\\Login.aspx.cs",
+              "RelativeToolTip": "GesmedWA\\Views\\Login\\Login.aspx.cs",
+              "ViewState": "AgIAABUAAAAAAAAAAAAYwCcAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T18:48:33.982Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ListaSupervisores.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Alfredo\\Documents\\GitHub\\Programacion-3\\Frontend\\GesmedWA\\GesmedWA\\Views\\Recursos\\ListaSupervisores.aspx.cs",
+              "RelativeDocumentMoniker": "GesmedWA\\Views\\Recursos\\ListaSupervisores.aspx.cs",
+              "ToolTip": "C:\\Users\\Alfredo\\Documents\\GitHub\\Programacion-3\\Frontend\\GesmedWA\\GesmedWA\\Views\\Recursos\\ListaSupervisores.aspx.cs",
+              "RelativeToolTip": "GesmedWA\\Views\\Recursos\\ListaSupervisores.aspx.cs",
+              "ViewState": "AgIAAAwAAAAAAAAAAIA4wCYAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T18:46:43.889Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "GestionFarmacias.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Alfredo\\Documents\\GitHub\\Programacion-3\\Frontend\\GesmedWA\\GesmedWA\\Views\\Recursos\\GestionFarmacias.aspx.cs",
+              "RelativeDocumentMoniker": "GesmedWA\\Views\\Recursos\\GestionFarmacias.aspx.cs",
+              "ToolTip": "C:\\Users\\Alfredo\\Documents\\GitHub\\Programacion-3\\Frontend\\GesmedWA\\GesmedWA\\Views\\Recursos\\GestionFarmacias.aspx.cs",
+              "RelativeToolTip": "GesmedWA\\Views\\Recursos\\GestionFarmacias.aspx.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAkwFMAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T14:09:55.49Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GestionVisitas.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Alfredo\\Documents\\GitHub\\Programacion-3\\Frontend\\GesmedWA\\GesmedWA\\Views\\Ventas\\GestionVisitas.aspx.cs",
+              "RelativeDocumentMoniker": "GesmedWA\\Views\\Ventas\\GestionVisitas.aspx.cs",
+              "ToolTip": "C:\\Users\\Alfredo\\Documents\\GitHub\\Programacion-3\\Frontend\\GesmedWA\\GesmedWA\\Views\\Ventas\\GestionVisitas.aspx.cs",
+              "RelativeToolTip": "GesmedWA\\Views\\Ventas\\GestionVisitas.aspx.cs",
+              "ViewState": "AgIAABkBAAAAAAAAAAAmwP0AAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T14:08:57.743Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "GestionVisitas.aspx",
+              "DocumentMoniker": "C:\\Users\\Alfredo\\Documents\\GitHub\\Programacion-3\\Frontend\\GesmedWA\\GesmedWA\\Views\\Ventas\\GestionVisitas.aspx",
+              "RelativeDocumentMoniker": "GesmedWA\\Views\\Ventas\\GestionVisitas.aspx",
+              "ToolTip": "C:\\Users\\Alfredo\\Documents\\GitHub\\Programacion-3\\Frontend\\GesmedWA\\GesmedWA\\Views\\Ventas\\GestionVisitas.aspx",
+              "RelativeToolTip": "GesmedWA\\Views\\Ventas\\GestionVisitas.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-11-25T14:08:53.501Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ListaRepresentantes.aspx.cs",
+              "DocumentMoniker": "C:\\Users\\Alfredo\\Documents\\GitHub\\Programacion-3\\Frontend\\GesmedWA\\GesmedWA\\Views\\Recursos\\ListaRepresentantes.aspx.cs",
+              "RelativeDocumentMoniker": "GesmedWA\\Views\\Recursos\\ListaRepresentantes.aspx.cs",
+              "ToolTip": "C:\\Users\\Alfredo\\Documents\\GitHub\\Programacion-3\\Frontend\\GesmedWA\\GesmedWA\\Views\\Recursos\\ListaRepresentantes.aspx.cs",
+              "RelativeToolTip": "GesmedWA\\Views\\Recursos\\ListaRepresentantes.aspx.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAcwIAAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-25T05:47:56.514Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ListaRepresentantes.aspx",
+              "DocumentMoniker": "C:\\Users\\Alfredo\\Documents\\GitHub\\Programacion-3\\Frontend\\GesmedWA\\GesmedWA\\Views\\Recursos\\ListaRepresentantes.aspx",
+              "RelativeDocumentMoniker": "GesmedWA\\Views\\Recursos\\ListaRepresentantes.aspx",
+              "ToolTip": "C:\\Users\\Alfredo\\Documents\\GitHub\\Programacion-3\\Frontend\\GesmedWA\\GesmedWA\\Views\\Recursos\\ListaRepresentantes.aspx",
+              "RelativeToolTip": "GesmedWA\\Views\\Recursos\\ListaRepresentantes.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-11-25T05:47:53.794Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "GestionRepresentantes.aspx",
+              "DocumentMoniker": "C:\\Users\\Alfredo\\Documents\\GitHub\\Programacion-3\\Frontend\\GesmedWA\\GesmedWA\\Views\\Recursos\\GestionRepresentantes.aspx",
+              "RelativeDocumentMoniker": "GesmedWA\\Views\\Recursos\\GestionRepresentantes.aspx",
+              "ToolTip": "C:\\Users\\Alfredo\\Documents\\GitHub\\Programacion-3\\Frontend\\GesmedWA\\GesmedWA\\Views\\Recursos\\GestionRepresentantes.aspx",
+              "RelativeToolTip": "GesmedWA\\Views\\Recursos\\GestionRepresentantes.aspx",
+              "LogicalView": "7651a703-06e5-11d1-8ebd-00a0c90f26ea",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000195|",
+              "WhenOpened": "2024-11-25T05:04:49.093Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

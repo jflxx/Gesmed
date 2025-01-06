@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://services.gesmed.pucp.edu.pe" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="VisitaWS" targetNamespace="https://services.gesmed.pucp.edu.pe" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/GesmedWS/VisitaWS?xsd=1" namespace="https://services.gesmed.pucp.edu.pe" />
+    </xsd:schema>
+  </types>
+  <message name="listarPorRepresentante">
+    <part name="parameters" element="tns:listarPorRepresentante" />
+  </message>
+  <message name="listarPorRepresentanteResponse">
+    <part name="parameters" element="tns:listarPorRepresentanteResponse" />
+  </message>
+  <message name="Exception">
+    <part name="fault" element="tns:Exception" />
+  </message>
+  <message name="listarPorIDRepresentante">
+    <part name="parameters" element="tns:listarPorIDRepresentante" />
+  </message>
+  <message name="listarPorIDRepresentanteResponse">
+    <part name="parameters" element="tns:listarPorIDRepresentanteResponse" />
+  </message>
+  <message name="actualizarVisita">
+    <part name="parameters" element="tns:actualizarVisita" />
+  </message>
+  <message name="actualizarVisitaResponse">
+    <part name="parameters" element="tns:actualizarVisitaResponse" />
+  </message>
+  <message name="obtenerPorID">
+    <part name="parameters" element="tns:obtenerPorID" />
+  </message>
+  <message name="obtenerPorIDResponse">
+    <part name="parameters" element="tns:obtenerPorIDResponse" />
+  </message>
+  <message name="listarPorTipo">
+    <part name="parameters" element="tns:listarPorTipo" />
+  </message>
+  <message name="listarPorTipoResponse">
+    <part name="parameters" element="tns:listarPorTipoResponse" />
+  </message>
+  <message name="listarVisita">
+    <part name="parameters" element="tns:listarVisita" />
+  </message>
+  <message name="listarVisitaResponse">
+    <part name="parameters" element="tns:listarVisitaResponse" />
+  </message>
+  <message name="completarVisita">
+    <part name="parameters" element="tns:completarVisita" />
+  </message>
+  <message name="completarVisitaResponse">
+    <part name="parameters" element="tns:completarVisitaResponse" />
+  </message>
+  <message name="listarPorCliente">
+    <part name="parameters" element="tns:listarPorCliente" />
+  </message>
+  <message name="listarPorClienteResponse">
+    <part name="parameters" element="tns:listarPorClienteResponse" />
+  </message>
+  <message name="insertarVisita">
+    <part name="parameters" element="tns:insertarVisita" />
+  </message>
+  <message name="insertarVisitaResponse">
+    <part name="parameters" element="tns:insertarVisitaResponse" />
+  </message>
+  <message name="eliminarVisita">
+    <part name="parameters" element="tns:eliminarVisita" />
+  </message>
+  <message name="eliminarVisitaResponse">
+    <part name="parameters" element="tns:eliminarVisitaResponse" />
+  </message>
+  <portType name="VisitaWS">
+    <operation name="listarPorRepresentante">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/VisitaWS/listarPorRepresentanteRequest" message="tns:listarPorRepresentante" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/VisitaWS/listarPorRepresentanteResponse" message="tns:listarPorRepresentanteResponse" />
+      <fault wsam:Action="https://services.gesmed.pucp.edu.pe/VisitaWS/listarPorRepresentante/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="listarPorIDRepresentante">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/VisitaWS/listarPorIDRepresentanteRequest" message="tns:listarPorIDRepresentante" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/VisitaWS/listarPorIDRepresentanteResponse" message="tns:listarPorIDRepresentanteResponse" />
+    </operation>
+    <operation name="actualizarVisita">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/VisitaWS/actualizarVisitaRequest" message="tns:actualizarVisita" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/VisitaWS/actualizarVisitaResponse" message="tns:actualizarVisitaResponse" />
+      <fault wsam:Action="https://services.gesmed.pucp.edu.pe/VisitaWS/actualizarVisita/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="obtenerPorID">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/VisitaWS/obtenerPorIDRequest" message="tns:obtenerPorID" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/VisitaWS/obtenerPorIDResponse" message="tns:obtenerPorIDResponse" />
+    </operation>
+    <operation name="listarPorTipo">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/VisitaWS/listarPorTipoRequest" message="tns:listarPorTipo" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/VisitaWS/listarPorTipoResponse" message="tns:listarPorTipoResponse" />
+      <fault wsam:Action="https://services.gesmed.pucp.edu.pe/VisitaWS/listarPorTipo/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="listarVisita">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/VisitaWS/listarVisitaRequest" message="tns:listarVisita" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/VisitaWS/listarVisitaResponse" message="tns:listarVisitaResponse" />
+      <fault wsam:Action="https://services.gesmed.pucp.edu.pe/VisitaWS/listarVisita/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="completarVisita">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/VisitaWS/completarVisitaRequest" message="tns:completarVisita" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/VisitaWS/completarVisitaResponse" message="tns:completarVisitaResponse" />
+    </operation>
+    <operation name="listarPorCliente">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/VisitaWS/listarPorClienteRequest" message="tns:listarPorCliente" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/VisitaWS/listarPorClienteResponse" message="tns:listarPorClienteResponse" />
+      <fault wsam:Action="https://services.gesmed.pucp.edu.pe/VisitaWS/listarPorCliente/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="insertarVisita">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/VisitaWS/insertarVisitaRequest" message="tns:insertarVisita" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/VisitaWS/insertarVisitaResponse" message="tns:insertarVisitaResponse" />
+      <fault wsam:Action="https://services.gesmed.pucp.edu.pe/VisitaWS/insertarVisita/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="eliminarVisita">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/VisitaWS/eliminarVisitaRequest" message="tns:eliminarVisita" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/VisitaWS/eliminarVisitaResponse" message="tns:eliminarVisitaResponse" />
+      <fault wsam:Action="https://services.gesmed.pucp.edu.pe/VisitaWS/eliminarVisita/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+  </portType>
+  <binding name="VisitaWSPortBinding" type="tns:VisitaWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="listarPorRepresentante">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="listarPorIDRepresentante">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarVisita">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="obtenerPorID">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarPorTipo">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="listarVisita">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="completarVisita">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarPorCliente">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="insertarVisita">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="eliminarVisita">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="VisitaWS">
+    <port name="VisitaWSPort" binding="tns:VisitaWSPortBinding">
+      <soap:address location="http://localhost:8080/GesmedWS/VisitaWS" />
+    </port>
+  </service>
+</definitions>

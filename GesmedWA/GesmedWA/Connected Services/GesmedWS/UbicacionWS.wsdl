@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://services.gesmed.pucp.edu.pe" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="UbicacionWS" targetNamespace="https://services.gesmed.pucp.edu.pe" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/GesmedWS/UbicacionWS?xsd=1" namespace="https://services.gesmed.pucp.edu.pe" />
+    </xsd:schema>
+  </types>
+  <message name="insertarUbicacion">
+    <part name="parameters" element="tns:insertarUbicacion" />
+  </message>
+  <message name="insertarUbicacionResponse">
+    <part name="parameters" element="tns:insertarUbicacionResponse" />
+  </message>
+  <message name="Exception">
+    <part name="fault" element="tns:Exception" />
+  </message>
+  <message name="eliminarUbicacion">
+    <part name="parameters" element="tns:eliminarUbicacion" />
+  </message>
+  <message name="eliminarUbicacionResponse">
+    <part name="parameters" element="tns:eliminarUbicacionResponse" />
+  </message>
+  <message name="listarUbicacion">
+    <part name="parameters" element="tns:listarUbicacion" />
+  </message>
+  <message name="listarUbicacionResponse">
+    <part name="parameters" element="tns:listarUbicacionResponse" />
+  </message>
+  <message name="actualizarUbicacion">
+    <part name="parameters" element="tns:actualizarUbicacion" />
+  </message>
+  <message name="actualizarUbicacionResponse">
+    <part name="parameters" element="tns:actualizarUbicacionResponse" />
+  </message>
+  <portType name="UbicacionWS">
+    <operation name="insertarUbicacion">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/UbicacionWS/insertarUbicacionRequest" message="tns:insertarUbicacion" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/UbicacionWS/insertarUbicacionResponse" message="tns:insertarUbicacionResponse" />
+      <fault wsam:Action="https://services.gesmed.pucp.edu.pe/UbicacionWS/insertarUbicacion/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="eliminarUbicacion">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/UbicacionWS/eliminarUbicacionRequest" message="tns:eliminarUbicacion" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/UbicacionWS/eliminarUbicacionResponse" message="tns:eliminarUbicacionResponse" />
+      <fault wsam:Action="https://services.gesmed.pucp.edu.pe/UbicacionWS/eliminarUbicacion/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="listarUbicacion">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/UbicacionWS/listarUbicacionRequest" message="tns:listarUbicacion" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/UbicacionWS/listarUbicacionResponse" message="tns:listarUbicacionResponse" />
+      <fault wsam:Action="https://services.gesmed.pucp.edu.pe/UbicacionWS/listarUbicacion/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="actualizarUbicacion">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/UbicacionWS/actualizarUbicacionRequest" message="tns:actualizarUbicacion" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/UbicacionWS/actualizarUbicacionResponse" message="tns:actualizarUbicacionResponse" />
+      <fault wsam:Action="https://services.gesmed.pucp.edu.pe/UbicacionWS/actualizarUbicacion/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+  </portType>
+  <binding name="UbicacionWSPortBinding" type="tns:UbicacionWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="insertarUbicacion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="eliminarUbicacion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="listarUbicacion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="actualizarUbicacion">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="UbicacionWS">
+    <port name="UbicacionWSPort" binding="tns:UbicacionWSPortBinding">
+      <soap:address location="http://localhost:8080/GesmedWS/UbicacionWS" />
+    </port>
+  </service>
+</definitions>

@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="https://services.gesmed.pucp.edu.pe" targetNamespace="https://services.gesmed.pucp.edu.pe" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="ListarSupervisorBriefXNombre" type="tns:ListarSupervisorBriefXNombre" />
+  <xs:element name="ListarSupervisorBriefXNombreResponse" type="tns:ListarSupervisorBriefXNombreResponse" />
+  <xs:element name="actualizarSupervisor" type="tns:actualizarSupervisor" />
+  <xs:element name="actualizarSupervisorResponse" type="tns:actualizarSupervisorResponse" />
+  <xs:element name="eliminarSupervisor" type="tns:eliminarSupervisor" />
+  <xs:element name="eliminarSupervisorResponse" type="tns:eliminarSupervisorResponse" />
+  <xs:element name="insertarSupervisor" type="tns:insertarSupervisor" />
+  <xs:element name="insertarSupervisorResponse" type="tns:insertarSupervisorResponse" />
+  <xs:element name="listarSupervisorPorNombreOApellido" type="tns:listarSupervisorPorNombreOApellido" />
+  <xs:element name="listarSupervisorPorNombreOApellidoResponse" type="tns:listarSupervisorPorNombreOApellidoResponse" />
+  <xs:element name="listarSupervisores" type="tns:listarSupervisores" />
+  <xs:element name="listarSupervisoresResponse" type="tns:listarSupervisoresResponse" />
+  <xs:element name="obtenerSupervisorXID" type="tns:obtenerSupervisorXID" />
+  <xs:element name="obtenerSupervisorXIDResponse" type="tns:obtenerSupervisorXIDResponse" />
+  <xs:complexType name="insertarSupervisor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="supervisor" type="tns:supervisor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="supervisor">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:trabajador">
+        <xs:sequence>
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="clientes" nillable="true" type="tns:cliente" />
+          <xs:element minOccurs="0" name="distrito" type="xs:string" />
+          <xs:element name="fidAdministrador" type="xs:int" />
+          <xs:element name="idSupervisor" type="xs:int" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="represesentantes" nillable="true" type="tns:representanteMedico" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="visitas" nillable="true" type="tns:visita" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="trabajador" abstract="true">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:persona">
+        <xs:sequence>
+          <xs:element name="fidPersona" type="xs:int" />
+          <xs:element minOccurs="0" name="idTrabajador" type="tns:usuario" />
+          <xs:element name="rol" type="xs:unsignedShort" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="persona" abstract="true">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:int" />
+      <xs:element minOccurs="0" name="apellidoMaterno" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidoPaterno" type="xs:string" />
+      <xs:element minOccurs="0" name="correo" type="xs:string" />
+      <xs:element name="DNI" type="xs:int" />
+      <xs:element name="idPersona" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="numero" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="cliente">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:persona">
+        <xs:sequence>
+          <xs:element name="idAdmin" type="xs:int" />
+          <xs:element name="idCliente" type="xs:int" />
+          <xs:element name="idSupervisor" type="xs:int" />
+          <xs:element name="tipo" type="xs:unsignedShort" />
+          <xs:element minOccurs="0" name="ubicacion" type="tns:ubicacion" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="ubicacion">
+    <xs:sequence>
+      <xs:element name="altitud" type="xs:double" />
+      <xs:element name="idUbicacion" type="xs:int" />
+      <xs:element name="latitud" type="xs:double" />
+      <xs:element name="longitud" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="representanteMedico">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:trabajador">
+        <xs:sequence>
+          <xs:element name="contadorVisitas" type="xs:int" />
+          <xs:element name="fidSupervisor" type="xs:int" />
+          <xs:element name="idRepresentanteMedico" type="xs:int" />
+          <xs:element name="KPI" type="xs:double" />
+          <xs:element minOccurs="0" name="subZona" type="xs:string" />
+          <xs:element minOccurs="0" maxOccurs="unbounded" name="visitas" nillable="true" type="tns:visita" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="visita">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cliente" type="tns:cliente" />
+      <xs:element minOccurs="0" name="detallesVisita" type="xs:string" />
+      <xs:element minOccurs="0" name="estado" type="tns:estadoVisita" />
+      <xs:element minOccurs="0" name="fecha" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="hora" type="xs:dateTime" />
+      <xs:element name="idVisita" type="xs:int" />
+      <xs:element minOccurs="0" name="representante" type="tns:representanteMedico" />
+      <xs:element minOccurs="0" name="tipoVisita" type="tns:tipoVisita" />
+      <xs:element minOccurs="0" name="ubicacionFinal" type="tns:ubicacion" />
+      <xs:element minOccurs="0" name="ubicacionInicial" type="tns:ubicacion" />
+      <xs:element name="visitado" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="usuario">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="idUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="user" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarSupervisorResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerSupervisorXID">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerSupervisorXIDResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:supervisor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarSupervisor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="supervisor" type="tns:supervisor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarSupervisorResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarSupervisor">
+    <xs:sequence>
+      <xs:element name="id" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarSupervisorResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarSupervisorPorNombreOApellido">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombreApellido" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarSupervisorPorNombreOApellidoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:supervisor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarSupervisores">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarSupervisoresResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:supervisor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListarSupervisorBriefXNombre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="cadena" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ListarSupervisorBriefXNombreResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:supervisor" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="estadoVisita">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="CANCELADO" />
+      <xs:enumeration value="FINALIZADO" />
+      <xs:enumeration value="EN_PROGRESO" />
+      <xs:enumeration value="PROGRAMADA" />
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:simpleType name="tipoVisita">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="GEORREFERENCIA" />
+      <xs:enumeration value="GEOLOCALIZACION" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

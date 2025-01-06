@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="https://services.gesmed.pucp.edu.pe" targetNamespace="https://services.gesmed.pucp.edu.pe" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="InsertarFarmacia" type="tns:InsertarFarmacia" />
+  <xs:element name="InsertarFarmaciaResponse" type="tns:InsertarFarmaciaResponse" />
+  <xs:element name="actualizarFarmacia" type="tns:actualizarFarmacia" />
+  <xs:element name="actualizarFarmaciaResponse" type="tns:actualizarFarmaciaResponse" />
+  <xs:element name="eliminarFarmacia" type="tns:eliminarFarmacia" />
+  <xs:element name="eliminarFarmaciaResponse" type="tns:eliminarFarmaciaResponse" />
+  <xs:element name="listarFarmacias" type="tns:listarFarmacias" />
+  <xs:element name="listarFarmaciasResponse" type="tns:listarFarmaciasResponse" />
+  <xs:element name="obtenerFarmaciaXID" type="tns:obtenerFarmaciaXID" />
+  <xs:element name="obtenerFarmaciaXIDResponse" type="tns:obtenerFarmaciaXIDResponse" />
+  <xs:complexType name="obtenerFarmaciaXID">
+    <xs:sequence>
+      <xs:element name="name" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerFarmaciaXIDResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:farmacia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="farmacia">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:cliente">
+        <xs:sequence>
+          <xs:element name="idFarmacia" type="xs:int" />
+          <xs:element minOccurs="0" name="nombreF" type="xs:string" />
+          <xs:element name="numeroDeLicencia" type="xs:int" />
+          <xs:element name="padreIdCliente" type="xs:int" />
+          <xs:element name="RUC" type="xs:int" />
+          <xs:element minOccurs="0" name="size" type="tns:tipoFarmacia" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="cliente">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:persona">
+        <xs:sequence>
+          <xs:element name="altitud" type="xs:double" />
+          <xs:element name="idAdmin" type="xs:int" />
+          <xs:element name="idCliente" type="xs:int" />
+          <xs:element name="idSupervisor" type="xs:int" />
+          <xs:element name="latitud" type="xs:double" />
+          <xs:element name="tipo" type="xs:unsignedShort" />
+          <xs:element minOccurs="0" name="ubicacion" type="tns:ubicacion" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="persona" abstract="true">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:int" />
+      <xs:element minOccurs="0" name="apellidoMaterno" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidoPaterno" type="xs:string" />
+      <xs:element minOccurs="0" name="correo" type="xs:string" />
+      <xs:element name="DNI" type="xs:int" />
+      <xs:element name="idPersona" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="numero" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ubicacion">
+    <xs:sequence>
+      <xs:element name="altitud" type="xs:double" />
+      <xs:element name="idUbicacion" type="xs:int" />
+      <xs:element name="latitud" type="xs:double" />
+      <xs:element name="longitud" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InsertarFarmacia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="tns:farmacia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="InsertarFarmaciaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarFarmacias">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarFarmaciasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:farmacia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarFarmacia">
+    <xs:sequence>
+      <xs:element name="name" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarFarmaciaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarFarmacia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="tns:farmacia" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarFarmaciaResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:simpleType name="tipoFarmacia">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="ESTANDAR" />
+      <xs:enumeration value="MEDIANA" />
+      <xs:enumeration value="CADENA" />
+    </xs:restriction>
+  </xs:simpleType>
+</xs:schema>

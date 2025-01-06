@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<discovery xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.xmlsoap.org/disco/">
+  <contractRef ref="http://localhost:8080/GesmedWS/VisitaWS?WSDL" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <contractRef ref="http://localhost:8080/GesmedWS/UbicacionWS?WSDL" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <contractRef ref="http://localhost:8080/GesmedWS/UsuarioWS?WSDL" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <contractRef ref="http://localhost:8080/GesmedWS/RepresentanteMedicoWS?WSDL" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <contractRef ref="http://localhost:8080/GesmedWS/SupervisorWS?WSDL" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <contractRef ref="http://localhost:8080/GesmedWS/FarmaciaWS?WSDL" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <contractRef ref="http://localhost:8080/GesmedWS/MedicoWS?WSDL" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <contractRef ref="http://localhost:8080/GesmedWS/AdministradorWS?WSDL" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <contractRef ref="http://localhost:8080/GesmedWS/ClienteWS?WSDL" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+  <contractRef ref="http://localhost:8080/GesmedWS/ReporteWS?WSDL" xmlns="http://schemas.xmlsoap.org/disco/scl/" />
+</discovery>

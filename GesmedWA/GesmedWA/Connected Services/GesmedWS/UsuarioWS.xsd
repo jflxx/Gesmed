@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="https://services.gesmed.pucp.edu.pe" targetNamespace="https://services.gesmed.pucp.edu.pe" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="actualizarUsuario" type="tns:actualizarUsuario" />
+  <xs:element name="actualizarUsuarioResponse" type="tns:actualizarUsuarioResponse" />
+  <xs:element name="eliminarUsuario" type="tns:eliminarUsuario" />
+  <xs:element name="eliminarUsuarioResponse" type="tns:eliminarUsuarioResponse" />
+  <xs:element name="insertarUsuario" type="tns:insertarUsuario" />
+  <xs:element name="insertarUsuarioResponse" type="tns:insertarUsuarioResponse" />
+  <xs:element name="listarUsuario" type="tns:listarUsuario" />
+  <xs:element name="listarUsuarioResponse" type="tns:listarUsuarioResponse" />
+  <xs:element name="obtenerRol" type="tns:obtenerRol" />
+  <xs:element name="obtenerRolResponse" type="tns:obtenerRolResponse" />
+  <xs:element name="verificarUsuario" type="tns:verificarUsuario" />
+  <xs:element name="verificarUsuarioResponse" type="tns:verificarUsuarioResponse" />
+  <xs:complexType name="obtenerRol">
+    <xs:sequence>
+      <xs:element name="idUsuario" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerRolResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:unsignedShort" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="usuario" type="tns:usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="usuario">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:boolean" />
+      <xs:element name="idUsuario" type="xs:int" />
+      <xs:element minOccurs="0" name="password" type="xs:string" />
+      <xs:element minOccurs="0" name="user" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarUsuarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="usuario" type="tns:usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarUsuarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarUsuario">
+    <xs:sequence>
+      <xs:element name="idUsuario" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarUsuarioResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verificarUsuario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="usuario" type="tns:usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="verificarUsuarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:usuario" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarUsuario">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarUsuarioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:usuario" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://services.gesmed.pucp.edu.pe" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="FarmaciaWS" targetNamespace="https://services.gesmed.pucp.edu.pe" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/GesmedWS/FarmaciaWS?xsd=1" namespace="https://services.gesmed.pucp.edu.pe" />
+    </xsd:schema>
+  </types>
+  <message name="eliminarFarmacia">
+    <part name="parameters" element="tns:eliminarFarmacia" />
+  </message>
+  <message name="eliminarFarmaciaResponse">
+    <part name="parameters" element="tns:eliminarFarmaciaResponse" />
+  </message>
+  <message name="InsertarFarmacia">
+    <part name="parameters" element="tns:InsertarFarmacia" />
+  </message>
+  <message name="InsertarFarmaciaResponse">
+    <part name="parameters" element="tns:InsertarFarmaciaResponse" />
+  </message>
+  <message name="listarFarmacias">
+    <part name="parameters" element="tns:listarFarmacias" />
+  </message>
+  <message name="listarFarmaciasResponse">
+    <part name="parameters" element="tns:listarFarmaciasResponse" />
+  </message>
+  <message name="actualizarFarmacia">
+    <part name="parameters" element="tns:actualizarFarmacia" />
+  </message>
+  <message name="actualizarFarmaciaResponse">
+    <part name="parameters" element="tns:actualizarFarmaciaResponse" />
+  </message>
+  <message name="obtenerFarmaciaXID">
+    <part name="parameters" element="tns:obtenerFarmaciaXID" />
+  </message>
+  <message name="obtenerFarmaciaXIDResponse">
+    <part name="parameters" element="tns:obtenerFarmaciaXIDResponse" />
+  </message>
+  <portType name="FarmaciaWS">
+    <operation name="eliminarFarmacia">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/FarmaciaWS/eliminarFarmaciaRequest" message="tns:eliminarFarmacia" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/FarmaciaWS/eliminarFarmaciaResponse" message="tns:eliminarFarmaciaResponse" />
+    </operation>
+    <operation name="InsertarFarmacia">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/FarmaciaWS/InsertarFarmaciaRequest" message="tns:InsertarFarmacia" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/FarmaciaWS/InsertarFarmaciaResponse" message="tns:InsertarFarmaciaResponse" />
+    </operation>
+    <operation name="listarFarmacias">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/FarmaciaWS/listarFarmaciasRequest" message="tns:listarFarmacias" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/FarmaciaWS/listarFarmaciasResponse" message="tns:listarFarmaciasResponse" />
+    </operation>
+    <operation name="actualizarFarmacia">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/FarmaciaWS/actualizarFarmaciaRequest" message="tns:actualizarFarmacia" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/FarmaciaWS/actualizarFarmaciaResponse" message="tns:actualizarFarmaciaResponse" />
+    </operation>
+    <operation name="obtenerFarmaciaXID">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/FarmaciaWS/obtenerFarmaciaXIDRequest" message="tns:obtenerFarmaciaXID" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/FarmaciaWS/obtenerFarmaciaXIDResponse" message="tns:obtenerFarmaciaXIDResponse" />
+    </operation>
+  </portType>
+  <binding name="FarmaciaWSPortBinding" type="tns:FarmaciaWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="eliminarFarmacia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="InsertarFarmacia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarFarmacias">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarFarmacia">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerFarmaciaXID">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="FarmaciaWS">
+    <port name="FarmaciaWSPort" binding="tns:FarmaciaWSPortBinding">
+      <soap:address location="http://localhost:8080/GesmedWS/FarmaciaWS" />
+    </port>
+  </service>
+</definitions>

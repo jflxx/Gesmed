@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://services.gesmed.pucp.edu.pe" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="RepresentanteMedicoWS" targetNamespace="https://services.gesmed.pucp.edu.pe" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/GesmedWS/RepresentanteMedicoWS?xsd=1" namespace="https://services.gesmed.pucp.edu.pe" />
+    </xsd:schema>
+  </types>
+  <message name="ObtenerKPIRepresentante">
+    <part name="parameters" element="tns:ObtenerKPIRepresentante" />
+  </message>
+  <message name="ObtenerKPIRepresentanteResponse">
+    <part name="parameters" element="tns:ObtenerKPIRepresentanteResponse" />
+  </message>
+  <message name="insertarRepresentante">
+    <part name="parameters" element="tns:insertarRepresentante" />
+  </message>
+  <message name="insertarRepresentanteResponse">
+    <part name="parameters" element="tns:insertarRepresentanteResponse" />
+  </message>
+  <message name="actualizarRepresentante">
+    <part name="parameters" element="tns:actualizarRepresentante" />
+  </message>
+  <message name="actualizarRepresentanteResponse">
+    <part name="parameters" element="tns:actualizarRepresentanteResponse" />
+  </message>
+  <message name="listarRepresentantes">
+    <part name="parameters" element="tns:listarRepresentantes" />
+  </message>
+  <message name="listarRepresentantesResponse">
+    <part name="parameters" element="tns:listarRepresentantesResponse" />
+  </message>
+  <message name="eliminarRepresentante">
+    <part name="parameters" element="tns:eliminarRepresentante" />
+  </message>
+  <message name="eliminarRepresentanteResponse">
+    <part name="parameters" element="tns:eliminarRepresentanteResponse" />
+  </message>
+  <message name="ListarRepresentantesMedico_Supervisor">
+    <part name="parameters" element="tns:ListarRepresentantesMedico_Supervisor" />
+  </message>
+  <message name="ListarRepresentantesMedico_SupervisorResponse">
+    <part name="parameters" element="tns:ListarRepresentantesMedico_SupervisorResponse" />
+  </message>
+  <message name="ListarRepresentanteMedicoXNombreXSupervisor">
+    <part name="parameters" element="tns:ListarRepresentanteMedicoXNombreXSupervisor" />
+  </message>
+  <message name="ListarRepresentanteMedicoXNombreXSupervisorResponse">
+    <part name="parameters" element="tns:ListarRepresentanteMedicoXNombreXSupervisorResponse" />
+  </message>
+  <message name="ListarRepresentanteMedicoPorNombreOApellido">
+    <part name="parameters" element="tns:ListarRepresentanteMedicoPorNombreOApellido" />
+  </message>
+  <message name="ListarRepresentanteMedicoPorNombreOApellidoResponse">
+    <part name="parameters" element="tns:ListarRepresentanteMedicoPorNombreOApellidoResponse" />
+  </message>
+  <message name="ObtenerRepresentanteMedicoXID">
+    <part name="parameters" element="tns:ObtenerRepresentanteMedicoXID" />
+  </message>
+  <message name="ObtenerRepresentanteMedicoXIDResponse">
+    <part name="parameters" element="tns:ObtenerRepresentanteMedicoXIDResponse" />
+  </message>
+  <portType name="RepresentanteMedicoWS">
+    <operation name="ObtenerKPIRepresentante">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/RepresentanteMedicoWS/ObtenerKPIRepresentanteRequest" message="tns:ObtenerKPIRepresentante" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/RepresentanteMedicoWS/ObtenerKPIRepresentanteResponse" message="tns:ObtenerKPIRepresentanteResponse" />
+    </operation>
+    <operation name="insertarRepresentante">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/RepresentanteMedicoWS/insertarRepresentanteRequest" message="tns:insertarRepresentante" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/RepresentanteMedicoWS/insertarRepresentanteResponse" message="tns:insertarRepresentanteResponse" />
+    </operation>
+    <operation name="actualizarRepresentante">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/RepresentanteMedicoWS/actualizarRepresentanteRequest" message="tns:actualizarRepresentante" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/RepresentanteMedicoWS/actualizarRepresentanteResponse" message="tns:actualizarRepresentanteResponse" />
+    </operation>
+    <operation name="listarRepresentantes">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/RepresentanteMedicoWS/listarRepresentantesRequest" message="tns:listarRepresentantes" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/RepresentanteMedicoWS/listarRepresentantesResponse" message="tns:listarRepresentantesResponse" />
+    </operation>
+    <operation name="eliminarRepresentante">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/RepresentanteMedicoWS/eliminarRepresentanteRequest" message="tns:eliminarRepresentante" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/RepresentanteMedicoWS/eliminarRepresentanteResponse" message="tns:eliminarRepresentanteResponse" />
+    </operation>
+    <operation name="ListarRepresentantesMedico_Supervisor">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/RepresentanteMedicoWS/ListarRepresentantesMedico_SupervisorRequest" message="tns:ListarRepresentantesMedico_Supervisor" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/RepresentanteMedicoWS/ListarRepresentantesMedico_SupervisorResponse" message="tns:ListarRepresentantesMedico_SupervisorResponse" />
+    </operation>
+    <operation name="ListarRepresentanteMedicoXNombreXSupervisor">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/RepresentanteMedicoWS/ListarRepresentanteMedicoXNombreXSupervisorRequest" message="tns:ListarRepresentanteMedicoXNombreXSupervisor" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/RepresentanteMedicoWS/ListarRepresentanteMedicoXNombreXSupervisorResponse" message="tns:ListarRepresentanteMedicoXNombreXSupervisorResponse" />
+    </operation>
+    <operation name="ListarRepresentanteMedicoPorNombreOApellido">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/RepresentanteMedicoWS/ListarRepresentanteMedicoPorNombreOApellidoRequest" message="tns:ListarRepresentanteMedicoPorNombreOApellido" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/RepresentanteMedicoWS/ListarRepresentanteMedicoPorNombreOApellidoResponse" message="tns:ListarRepresentanteMedicoPorNombreOApellidoResponse" />
+    </operation>
+    <operation name="ObtenerRepresentanteMedicoXID">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/RepresentanteMedicoWS/ObtenerRepresentanteMedicoXIDRequest" message="tns:ObtenerRepresentanteMedicoXID" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/RepresentanteMedicoWS/ObtenerRepresentanteMedicoXIDResponse" message="tns:ObtenerRepresentanteMedicoXIDResponse" />
+    </operation>
+  </portType>
+  <binding name="RepresentanteMedicoWSPortBinding" type="tns:RepresentanteMedicoWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="ObtenerKPIRepresentante">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarRepresentante">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarRepresentante">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarRepresentantes">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarRepresentante">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListarRepresentantesMedico_Supervisor">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListarRepresentanteMedicoXNombreXSupervisor">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListarRepresentanteMedicoPorNombreOApellido">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ObtenerRepresentanteMedicoXID">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="RepresentanteMedicoWS">
+    <port name="RepresentanteMedicoWSPort" binding="tns:RepresentanteMedicoWSPortBinding">
+      <soap:address location="http://localhost:8080/GesmedWS/RepresentanteMedicoWS" />
+    </port>
+  </service>
+</definitions>

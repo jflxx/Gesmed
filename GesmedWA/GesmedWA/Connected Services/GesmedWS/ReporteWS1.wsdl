@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://services.gesmed.pucp.edu.pe" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="ReporteWS" targetNamespace="https://services.gesmed.pucp.edu.pe" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/GesmedWS/ReporteWS?xsd=1" namespace="https://services.gesmed.pucp.edu.pe" />
+    </xsd:schema>
+  </types>
+  <message name="reportePDF_MostrarRepresentanteKPIS">
+    <part name="parameters" element="tns:reportePDF_MostrarRepresentanteKPIS" />
+  </message>
+  <message name="reportePDF_MostrarRepresentanteKPISResponse">
+    <part name="parameters" element="tns:reportePDF_MostrarRepresentanteKPISResponse" />
+  </message>
+  <message name="Exception">
+    <part name="fault" element="tns:Exception" />
+  </message>
+  <message name="reportePDF_ListaVisitas">
+    <part name="parameters" element="tns:reportePDF_ListaVisitas" />
+  </message>
+  <message name="reportePDF_ListaVisitasResponse">
+    <part name="parameters" element="tns:reportePDF_ListaVisitasResponse" />
+  </message>
+  <message name="reportePDF_representantesKPIS">
+    <part name="parameters" element="tns:reportePDF_representantesKPIS" />
+  </message>
+  <message name="reportePDF_representantesKPISResponse">
+    <part name="parameters" element="tns:reportePDF_representantesKPISResponse" />
+  </message>
+  <message name="generarBuffer">
+    <part name="parameters" element="tns:generarBuffer" />
+  </message>
+  <message name="generarBufferResponse">
+    <part name="parameters" element="tns:generarBufferResponse" />
+  </message>
+  <portType name="ReporteWS">
+    <operation name="reportePDF_MostrarRepresentanteKPIS">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/ReporteWS/reportePDF_MostrarRepresentanteKPISRequest" message="tns:reportePDF_MostrarRepresentanteKPIS" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/ReporteWS/reportePDF_MostrarRepresentanteKPISResponse" message="tns:reportePDF_MostrarRepresentanteKPISResponse" />
+      <fault wsam:Action="https://services.gesmed.pucp.edu.pe/ReporteWS/reportePDF_MostrarRepresentanteKPIS/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="reportePDF_ListaVisitas">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/ReporteWS/reportePDF_ListaVisitasRequest" message="tns:reportePDF_ListaVisitas" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/ReporteWS/reportePDF_ListaVisitasResponse" message="tns:reportePDF_ListaVisitasResponse" />
+      <fault wsam:Action="https://services.gesmed.pucp.edu.pe/ReporteWS/reportePDF_ListaVisitas/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="reportePDF_representantesKPIS">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/ReporteWS/reportePDF_representantesKPISRequest" message="tns:reportePDF_representantesKPIS" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/ReporteWS/reportePDF_representantesKPISResponse" message="tns:reportePDF_representantesKPISResponse" />
+      <fault wsam:Action="https://services.gesmed.pucp.edu.pe/ReporteWS/reportePDF_representantesKPIS/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+    <operation name="generarBuffer">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/ReporteWS/generarBufferRequest" message="tns:generarBuffer" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/ReporteWS/generarBufferResponse" message="tns:generarBufferResponse" />
+      <fault wsam:Action="https://services.gesmed.pucp.edu.pe/ReporteWS/generarBuffer/Fault/Exception" name="Exception" message="tns:Exception" />
+    </operation>
+  </portType>
+  <binding name="ReporteWSPortBinding" type="tns:ReporteWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="reportePDF_MostrarRepresentanteKPIS">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="reportePDF_ListaVisitas">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="reportePDF_representantesKPIS">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+    <operation name="generarBuffer">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+      <fault name="Exception">
+        <soap:fault use="literal" name="Exception" namespace="" />
+      </fault>
+    </operation>
+  </binding>
+  <service name="ReporteWS">
+    <port name="ReporteWSPort" binding="tns:ReporteWSPortBinding">
+      <soap:address location="http://localhost:8080/GesmedWS/ReporteWS" />
+    </port>
+  </service>
+</definitions>

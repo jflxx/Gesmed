@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="https://services.gesmed.pucp.edu.pe" targetNamespace="https://services.gesmed.pucp.edu.pe" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Exception" type="tns:Exception" />
+  <xs:element name="generarBuffer" type="tns:generarBuffer" />
+  <xs:element name="generarBufferResponse" type="tns:generarBufferResponse" />
+  <xs:element name="reportePDF_ListaVisitas" type="tns:reportePDF_ListaVisitas" />
+  <xs:element name="reportePDF_ListaVisitasResponse" type="tns:reportePDF_ListaVisitasResponse" />
+  <xs:element name="reportePDF_MostrarRepresentanteKPIS" type="tns:reportePDF_MostrarRepresentanteKPIS" />
+  <xs:element name="reportePDF_MostrarRepresentanteKPISResponse" type="tns:reportePDF_MostrarRepresentanteKPISResponse" />
+  <xs:element name="reportePDF_representantesKPIS" type="tns:reportePDF_representantesKPIS" />
+  <xs:element name="reportePDF_representantesKPISResponse" type="tns:reportePDF_representantesKPISResponse" />
+  <xs:complexType name="reportePDF_ListaVisitas">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="arg1" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reportePDF_ListaVisitasResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="generarBuffer">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:string" />
+      <xs:element name="arg1">
+        <xs:complexType>
+          <xs:sequence>
+            <xs:element minOccurs="0" maxOccurs="unbounded" name="entry">
+              <xs:complexType>
+                <xs:sequence>
+                  <xs:element minOccurs="0" name="key" type="xs:string" />
+                  <xs:element minOccurs="0" name="value" type="xs:anyType" />
+                </xs:sequence>
+              </xs:complexType>
+            </xs:element>
+          </xs:sequence>
+        </xs:complexType>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="generarBufferResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reportePDF_MostrarRepresentanteKPIS">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reportePDF_MostrarRepresentanteKPISResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reportePDF_representantesKPIS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="xs:dateTime" />
+      <xs:element minOccurs="0" name="arg1" type="xs:dateTime" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="reportePDF_representantesKPISResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" nillable="true" type="xs:base64Binary" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

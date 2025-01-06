@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="https://services.gesmed.pucp.edu.pe" targetNamespace="https://services.gesmed.pucp.edu.pe" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="actualizarMedico" type="tns:actualizarMedico" />
+  <xs:element name="actualizarMedicoResponse" type="tns:actualizarMedicoResponse" />
+  <xs:element name="eliminarMedico" type="tns:eliminarMedico" />
+  <xs:element name="eliminarMedicoResponse" type="tns:eliminarMedicoResponse" />
+  <xs:element name="insertarMedico" type="tns:insertarMedico" />
+  <xs:element name="insertarMedicoResponse" type="tns:insertarMedicoResponse" />
+  <xs:element name="listarMedicos" type="tns:listarMedicos" />
+  <xs:element name="listarMedicosResponse" type="tns:listarMedicosResponse" />
+  <xs:element name="obtenerMedicoXID" type="tns:obtenerMedicoXID" />
+  <xs:element name="obtenerMedicoXIDResponse" type="tns:obtenerMedicoXIDResponse" />
+  <xs:complexType name="obtenerMedicoXID">
+    <xs:sequence>
+      <xs:element name="name" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="obtenerMedicoXIDResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:medico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="medico">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:cliente">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="especialidad" type="xs:string" />
+          <xs:element name="idMedico" type="xs:int" />
+          <xs:element name="numeroDeColegiatura" type="xs:int" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="cliente">
+    <xs:complexContent mixed="false">
+      <xs:extension base="tns:persona">
+        <xs:sequence>
+          <xs:element name="altitud" type="xs:double" />
+          <xs:element name="idAdmin" type="xs:int" />
+          <xs:element name="idCliente" type="xs:int" />
+          <xs:element name="idSupervisor" type="xs:int" />
+          <xs:element name="latitud" type="xs:double" />
+          <xs:element name="tipo" type="xs:unsignedShort" />
+          <xs:element minOccurs="0" name="ubicacion" type="tns:ubicacion" />
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:complexType name="persona" abstract="true">
+    <xs:sequence>
+      <xs:element name="activo" type="xs:int" />
+      <xs:element minOccurs="0" name="apellidoMaterno" type="xs:string" />
+      <xs:element minOccurs="0" name="apellidoPaterno" type="xs:string" />
+      <xs:element minOccurs="0" name="correo" type="xs:string" />
+      <xs:element name="DNI" type="xs:int" />
+      <xs:element name="idPersona" type="xs:int" />
+      <xs:element minOccurs="0" name="nombre" type="xs:string" />
+      <xs:element minOccurs="0" name="numero" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ubicacion">
+    <xs:sequence>
+      <xs:element name="altitud" type="xs:double" />
+      <xs:element name="idUbicacion" type="xs:int" />
+      <xs:element name="latitud" type="xs:double" />
+      <xs:element name="longitud" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarMedico">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="tns:medico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarMedicoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarMedico">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="name" type="tns:medico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarMedicoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="listarMedicos">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarMedicosResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:medico" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarMedico">
+    <xs:sequence>
+      <xs:element name="name" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarMedicoResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>

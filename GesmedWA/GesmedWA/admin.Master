@@ -1,0 +1,390 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="admin.master.cs" Inherits="GesmedWA.admin" %>
+
+<!DOCTYPE html>
+<html>
+<head runat="server">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/Fonts/css/all.css" rel="stylesheet" />
+    <link href="Content/Fonts/css/otrosEstilos.css" rel="stylesheet" />
+    <script src="/Scripts/bootstrap.js"></script>
+    <script src="/Scripts/bootstrap.bundle.js"></script>
+    <script src="/Scripts/jquery-3.7.1.js"></script>
+
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --primary-dark: #0b5ed7;
+            --text-light: #f8f9fa;
+            --transition-speed: 0.3s;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f8f9fa;
+        }
+
+        /* Mejoras del Sidebar */
+        #bdSidebar {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+            box-shadow: 4px 0 10px rgba(0,0,0,0.1);
+            transition: all var(--transition-speed) ease;
+        }
+
+        .sidebarA {
+            position: sticky !important;
+            top: 0;
+        }
+
+        #TituloGesmed, #TituloGesmedP {
+            font-size: 1.75rem;
+            font-weight: 600;
+            text-align: center;
+            margin: 1rem 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+        }
+
+        /* Mejoras de la navegación */
+        .mynav .nav-link {
+            border-radius: 8px;
+            margin: 0.25rem 0;
+            transition: all var(--transition-speed) ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mynav .nav-link:hover {
+            background-color: rgba(255,255,255,0.1);
+            transform: translateX(5px);
+        }
+
+        .mynav .nav-link i {
+            width: 24px;
+            text-align: center;
+        }
+
+        /* Mejoras de la barra superior */
+        #navBar {
+            background-color: white !important;
+            border-bottom: 1px solid rgba(0,0,0,0.1);
+        }
+
+        .navbar .nav-link {
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            transition: all var(--transition-speed) ease;
+            margin: 0 0.25rem;
+        }
+
+        .navbar .nav-link:hover {
+            background-color: var(--primary-color);
+            color: white !important;
+        }
+
+        /* Mejoras del botón de usuario */
+        #btnUsuario, #btnUsuario1 {
+            background-color: white;
+            border: 1px solid #dee2e6;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            transition: all var(--transition-speed) ease;
+        }
+
+        #btnUsuario:hover, #btnUsuario1:hover {
+            background-color: var(--primary-color);
+            color: white !important;
+            border-color: var(--primary-color);
+        }
+
+        .dropdown-menu {
+            border-radius: 10px;
+            border: none;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .dropdown-item {
+            padding: 0.5rem 1rem;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f8f9fa;
+            color: var(--primary-color);
+        }
+
+        /* Logo y branding */
+        .navbar-brand img {
+            transition: transform var(--transition-speed) ease;
+        }
+
+        .navbar-brand:hover img {
+            transform: scale(1.05);
+        }
+
+        /* Contenido principal */
+        #derecha {
+            background-color: #f8f9fa;
+            min-height: 100vh;
+        }
+
+        /* Mejoras del Offcanvas */
+        .offcanvas {
+            background: linear-gradient(135deg, var(--primary-color), var(--primary-dark));
+        }
+
+        .btn-close {
+            background-color: white;
+            opacity: 1;
+            border-radius: 50%;
+            padding: 0.5rem;
+        }
+
+        /* Ajustes responsivos */
+        @media (max-width: 768px) {
+            #bdSidebar {
+                display: none;
+            }
+
+            #derecha {
+                margin-left: 0;
+            }
+
+            .p-2 img {
+                max-width: 100px;
+                height: auto;
+            }
+
+            #navBar {
+                padding: 0.5rem;
+            }
+
+            .navbar .nav-link {
+                padding: 0.25rem 0.5rem;
+            }
+        }
+
+        /* Animaciones y efectos hover */
+        .shadow-hover {
+            transition: box-shadow var(--transition-speed) ease;
+        }
+
+        .shadow-hover:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        /* Scrollbar personalizado */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #f1f1f1;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary-color);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+    </style>
+
+    <title></title>
+    <asp:ContentPlaceHolder ID="head" runat="server"></asp:ContentPlaceHolder>
+</head>
+<body>
+    <asp:ContentPlaceHolder ID="cphScripts" runat="server"></asp:ContentPlaceHolder>
+    <div class="container-fluid d-flex p-0 h-100">
+        <!-- Menu Lateral -->
+        <div id="bdSidebar" class="d-none d-md-flex flex-column flex-shrink-0 p-3 text-white vh-100 sidebarA" style="width: 280px;">
+            <a href="#" class="navbar-brand d-flex flex-column justify-content-center align-items-center">
+                <img src="/Images/LogoGesmed.png" style="width: 150px; height: auto;" class="mb-3"/>
+            </a>
+            <div class="align-content-center">
+                <h1 id="TituloGesmed">GesmedSoft</h1>
+            </div>
+            <hr class="my-3 bg-light opacity-25">
+            <ul class="mynav nav nav-pills flex-column mb-auto">
+                <li class="sidebar nav-item mb-1">
+                    <a href="/Views/Reportes/GestionReporte.aspx?accion=visita" class="nav-link text-white">
+                        <i class="fa-solid fa-users pe-2"></i>
+                        <span class="topic">Reporte de Visitas</span>
+                    </a>
+                </li>
+                <li class="sidebar nav-item mb-1">
+                    <a href="/Views/Reportes/GestionReporte.aspx?accion=representante" class="nav-link text-white">
+                        <i class="fa-solid fa-list pe-2"></i>
+                        <span class="topic">Reporte de Representantes</span>
+                    </a>
+                </li>
+            </ul>
+            <hr class="my-3 bg-light opacity-25">
+            <div class="d-flex justify-content-center">
+                <h6 class="mt-1 mb-0 opacity-75">Gestión de Representantes</h6>
+            </div>
+        </div>
+
+        <!-- Contenido derecho -->
+        <div id="derecha" class="flex-fill overflow-auto">
+            <!-- Barra móvil -->
+            <div class="p-2 d-md-none d-flex align-items-center text-white shadow-sm" style="background: linear-gradient(135deg, var(--primary-color), var(--primary-dark))">
+                <button class="btn btn-link text-white border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#bdSidebarSmall">
+                    <i class="fa-solid fa-bars fa-lg"></i>
+                </button>
+                <img src="/Images/LogoGesmed.png" class="ms-3" width="75" alt="Logo">
+                <div class="ms-auto">
+                    <!-- Dropdown de Usuario -->
+                    <div class="dropdown">
+                        <button class="btn btn-outline-dark dropdown-toggle bg-light" id="btnUsuario1" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fas fa-user-circle me-2"></i>
+                            <asp:Label ID="lblNombreUsuario1" runat="server" CssClass="text-dark"></asp:Label>
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="btnUsuario">
+                            <li>
+                                <a class="dropdown-item" href="/Views/Login/Logout.aspx">
+                                    <i class="fas fa-sign-out-alt me-0"></i>Cerrar Sesión
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Barra de navegación principal -->
+            <nav id="navBar" class="navbar navbar-expand-lg navbar-light bg-white shadow-sm d-none d-md-flex sticky-top">
+                <div class="container-fluid d-md-flex align-items-center">
+                    <div class="d-flex w-100">
+                        <div class="w-75"> <!-- Div de la lista a la izquierda -->
+                            <ul class="navbar-nav d-flex flex-row mb-0 w-100 d-none d-md-flex"> <!-- Lista de navegación visible en pantallas medianas y grandes -->
+                                <!-- Barra superior agregada a la barra lateral -->
+                                <li class="sidebar nav-item mb-1 me-1"> <!-- Aquí agregamos la clase me-4 para el margen derecho -->
+                                    <a id="btnHome" runat="server" href="/Views/Inicio/Home.aspx" class="nav-link text-black">
+                                        <i class="fa-solid fa-house pe-2"></i>
+                                        <span class="topic">Inicio</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar nav-item mb-1 me-1">
+                                    <a id="btnClientes" runat="server" href="/Views/Recursos/ListaClientes.aspx" class="nav-link text-black">
+                                        <i class="fa-solid fa-users pe-2"></i>
+                                        <span class="topic">Clientes</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar nav-item mb-1 me-1">
+                                    <a id="btnVisitas" runat="server" href="/Views/Ventas/ListaVisitas.aspx" class="nav-link text-black">
+                                        <i class="fa-solid fa-calendar-check pe-2"></i>
+                                        <span class="topic">Visitas</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar nav-item mb-1 me-1">
+                                    <a id="btnRepresentantes" runat="server" href="/Views/Recursos/ListaRepresentantes.aspx" class="nav-link text-black">
+                                        <i class="fa-solid fa-id-card pe-2"></i>
+                                        <span class="topic">Representantes</span>
+                                    </a>
+                                </li>
+                                <li class="sidebar nav-item mb-1 me-1">
+                                    <a id="btnSupervisores" runat="server" href="/Views/Recursos/ListaSupervisores.aspx" class="nav-link text-black">
+                                        <i class="fa-solid fa-user-tie pe-2"></i>
+                                        <span class="topic">Supervisores</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="ms-auto">
+                            <!-- Dropdown de Usuario -->
+                            <div class="dropdown">
+                                <button 
+                                    class="btn btn-outline-dark dropdown-toggle" 
+                                    id="btnUsuario" 
+                                    data-bs-toggle="dropdown" 
+                                    aria-expanded="false" 
+                                    data-bs-display="static">
+                                    <i class="fas fa-user-circle me-2"></i>
+                                    <asp:Label ID="lblNombreUsuario" runat="server" CssClass="text-dark"></asp:Label>
+                                </button>
+                                <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="btnUsuario" style="max-width: 200px; max-height: 300px; overflow-y: auto;">
+                                    <li>
+                                        <a class="dropdown-item" href="/Views/Login/Logout.aspx">
+                                            <i class="fas fa-sign-out-alt me-2"></i>Cerrar Sesión
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- Contenido principal -->
+            <div class="p-4">
+                <form runat="server">
+                    <asp:ContentPlaceHolder ID="cphContenido" runat="server"></asp:ContentPlaceHolder>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Offcanvas móvil -->
+    <div class="offcanvas offcanvas-start bg-primary text-white vh-100" id="bdSidebarSmall" tabindex="-1" aria-labelledby="bdSidebarSmallLabel">
+        <div class="offcanvas-header">
+            <h1 id="TituloGesmedP" class="mt-2">GesmedSoft</h1>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas"></button>
+        </div>
+        <div class="offcanvas-body">
+            <ul class="mynav nav nav-pills flex-column mb-auto">
+                <!-- Barra superior agregada a la barra lateral -->
+                <li class="sidebar nav-item mb-1">
+                    <a id="A1" runat="server" href="/Views/Inicio/Home.aspx" class="nav-link text-white">
+                        <i class="fa-solid fa-house pe-2"></i>
+                        <span class="topic">Inicio</span>
+                    </a>
+                </li>
+                <li class="sidebar nav-item mb-1">
+                    <a id="A2" runat="server" href="/Views/Recursos/ListaClientes.aspx" class="nav-link text-white">
+                        <i class="fa-solid fa-users pe-2"></i>
+                        <span class="topic">Mis Clientes</span>
+                    </a>
+                </li>
+                <li class="sidebar nav-item mb-1">
+                    <a id="A3" runat="server" href="/Views/Ventas/ListaVisitas.aspx" class="nav-link text-white">
+                        <i class="fa-solid fa-calendar-check pe-2"></i>
+                        <span class="topic">Visitas</span>
+                    </a>
+                </li>
+                <li class="sidebar nav-item mb-1">
+                    <a id="A4" runat="server" href="/Views/Recursos/ListaRepresentantes.aspx" class="nav-link text-white">
+                        <i class="fa-solid fa-id-card pe-2"></i>
+                        <span class="topic">Mis Representantes</span>
+                    </a>
+                </li>
+                <li class="sidebar nav-item mb-1">
+                    <a id="A5" runat="server" href="/Views/Recursos/ListaSupervisores.aspx" class="nav-link text-white">
+                        <i class="fa-solid fa-user-tie pe-2"></i>
+                        <span class="topic">Mis Supervisores</span>
+                    </a>
+                </li>
+                <!-- Enlaces adicionales de Reportes -->
+                <li class="sidebar nav-item mb-1">
+                    <a href="/Views/Reportes/GestionReporte.aspx?accion=visita" class="nav-link text-white">
+                        <i class="fa-solid fa-users pe-2"></i>
+                        <span class="topic">Reporte de Visitas</span>
+                    </a>
+                </li>
+                <li class="sidebar nav-item mb-1">
+                    <a href="/Views/Reportes/GestionReporte.aspx?accion=representante" class="nav-link text-white">
+                        <i class="fa-solid fa-list pe-2"></i>
+                        <span class="topic">Reporte de Representantes</span>
+                    </a>
+                </li>
+            </ul>
+            <hr>
+            <div class="d-flex justify-content-center">
+                <i class="align-content-lg-center"></i>
+                <h6 class="mt-1 mb-0">Gestion de Representantes</h6>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

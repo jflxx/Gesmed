@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://services.gesmed.pucp.edu.pe" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="MedicoWS" targetNamespace="https://services.gesmed.pucp.edu.pe" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/GesmedWS/MedicoWS?xsd=1" namespace="https://services.gesmed.pucp.edu.pe" />
+    </xsd:schema>
+  </types>
+  <message name="actualizarMedico">
+    <part name="parameters" element="tns:actualizarMedico" />
+  </message>
+  <message name="actualizarMedicoResponse">
+    <part name="parameters" element="tns:actualizarMedicoResponse" />
+  </message>
+  <message name="obtenerMedicoXID">
+    <part name="parameters" element="tns:obtenerMedicoXID" />
+  </message>
+  <message name="obtenerMedicoXIDResponse">
+    <part name="parameters" element="tns:obtenerMedicoXIDResponse" />
+  </message>
+  <message name="insertarMedico">
+    <part name="parameters" element="tns:insertarMedico" />
+  </message>
+  <message name="insertarMedicoResponse">
+    <part name="parameters" element="tns:insertarMedicoResponse" />
+  </message>
+  <message name="listarMedicos">
+    <part name="parameters" element="tns:listarMedicos" />
+  </message>
+  <message name="listarMedicosResponse">
+    <part name="parameters" element="tns:listarMedicosResponse" />
+  </message>
+  <message name="eliminarMedico">
+    <part name="parameters" element="tns:eliminarMedico" />
+  </message>
+  <message name="eliminarMedicoResponse">
+    <part name="parameters" element="tns:eliminarMedicoResponse" />
+  </message>
+  <portType name="MedicoWS">
+    <operation name="actualizarMedico">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/MedicoWS/actualizarMedicoRequest" message="tns:actualizarMedico" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/MedicoWS/actualizarMedicoResponse" message="tns:actualizarMedicoResponse" />
+    </operation>
+    <operation name="obtenerMedicoXID">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/MedicoWS/obtenerMedicoXIDRequest" message="tns:obtenerMedicoXID" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/MedicoWS/obtenerMedicoXIDResponse" message="tns:obtenerMedicoXIDResponse" />
+    </operation>
+    <operation name="insertarMedico">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/MedicoWS/insertarMedicoRequest" message="tns:insertarMedico" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/MedicoWS/insertarMedicoResponse" message="tns:insertarMedicoResponse" />
+    </operation>
+    <operation name="listarMedicos">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/MedicoWS/listarMedicosRequest" message="tns:listarMedicos" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/MedicoWS/listarMedicosResponse" message="tns:listarMedicosResponse" />
+    </operation>
+    <operation name="eliminarMedico">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/MedicoWS/eliminarMedicoRequest" message="tns:eliminarMedico" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/MedicoWS/eliminarMedicoResponse" message="tns:eliminarMedicoResponse" />
+    </operation>
+  </portType>
+  <binding name="MedicoWSPortBinding" type="tns:MedicoWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="actualizarMedico">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerMedicoXID">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarMedico">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarMedicos">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="eliminarMedico">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="MedicoWS">
+    <port name="MedicoWSPort" binding="tns:MedicoWSPortBinding">
+      <soap:address location="http://localhost:8080/GesmedWS/MedicoWS" />
+    </port>
+  </service>
+</definitions>

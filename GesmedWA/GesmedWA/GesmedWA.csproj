@@ -1,0 +1,589 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{92B768A1-9ABC-480C-822C-691A8ADE88E2}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>GesmedWA</RootNamespace>
+    <AssemblyName>GesmedWA</AssemblyName>
+    <TargetFrameworkVersion>v4.8.1</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort>44318</IISExpressSSLPort>
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.actualizarRepresentanteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.actualizarSupervisorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.actualizarVisitaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.eliminarRepresentanteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.eliminarSupervisorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.eliminarVisitaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.insertarRepresentanteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.insertarSupervisorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.insertarVisitaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.listarPorClienteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.listarPorRepresentanteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.listarPorTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.ListarRepresentanteMedicoPorNombreOApellidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.ListarRepresentanteMedicoXNombreXSupervisorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.listarRepresentantesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.listarSupervisoresResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.listarSupervisorPorNombreOApellidoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.listarUbicacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.listarUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.listarVisitaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.obtenerPorIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.ObtenerRepresentanteMedicoXIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.obtenerSupervisorXIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.representanteMedico.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.supervisor.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.ubicacion.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.usuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.visita.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\GesmedWS\AdministradorWS.wsdl" />
+    <None Include="Connected Services\GesmedWS\AdministradorWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.administrador.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.listarAdministradoresResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.actualizarUbicacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.eliminarUbicacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.insertarUbicacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\GesmedWS\ClienteWS1.wsdl" />
+    <None Include="Connected Services\GesmedWS\ClienteWS1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GesmedWS\ClienteWS2.wsdl" />
+    <None Include="Connected Services\GesmedWS\ClienteWS2.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GesmedWS\ClienteWS7.wsdl" />
+    <None Include="Connected Services\GesmedWS\ClienteWS7.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GesmedWS\FarmaciaWS.wsdl" />
+    <None Include="Connected Services\GesmedWS\FarmaciaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.actualizarFarmaciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.actualizarMedicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.eliminarFarmaciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.eliminarMedicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.farmacia.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.InsertarFarmaciaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.insertarMedicoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.listarFarmaciasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.listarMedicosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.medico.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.obtenerFarmaciaXIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.obtenerMedicoXIDResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\GesmedWS\FarmaciaWS1.wsdl" />
+    <None Include="Connected Services\GesmedWS\FarmaciaWS1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.actualizarUsuarioResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.eliminarUsuarioResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.insertarUsuarioResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.verificarUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.trabajador.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.cliente1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.ListarClientexSupervisorxNombreResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.obtenerRolResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.listarPorIDRepresentanteResponse2.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.ListarRepresentantesMedico_SupervisorResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.completarVisitaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.ListarAdministradorXNombreResponse4.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.ListarSupervisorBriefXNombreResponse4.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.ObtenerKPIRepresentanteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.ListarAdministradorXNombreResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.listarPorIDRepresentanteResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.ListarSupervisorBriefXNombreResponse1.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.generarBufferResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.reportePDF_ListaVisitasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.reportePDF_MostrarRepresentanteKPISResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Connected Services\GesmedWS\GesmedWA.GesmedWS.reportePDF_representantesKPISResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\GesmedWS\MedicoWS.wsdl" />
+    <None Include="Connected Services\GesmedWS\MedicoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GesmedWS\MedicoWS1.wsdl" />
+    <None Include="Connected Services\GesmedWS\MedicoWS1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GesmedWS\ReporteWS1.wsdl" />
+    <None Include="Connected Services\GesmedWS\ReporteWS1.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GesmedWS\RepresentanteMedicoWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GesmedWS\servicios.disco" />
+    <None Include="Connected Services\GesmedWS\configuration91.svcinfo" />
+    <None Include="Connected Services\GesmedWS\configuration.svcinfo" />
+    <None Include="Connected Services\GesmedWS\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <Content Include="Content\bootstrap-grid.css" />
+    <Content Include="Content\bootstrap-grid.min.css" />
+    <Content Include="Content\bootstrap-grid.rtl.css" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css" />
+    <Content Include="Content\bootstrap-reboot.css" />
+    <Content Include="Content\bootstrap-reboot.min.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.css" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css" />
+    <Content Include="Content\bootstrap-utilities.css" />
+    <Content Include="Content\bootstrap-utilities.min.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.css" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\bootstrap.rtl.css" />
+    <Content Include="Content\bootstrap.rtl.min.css" />
+    <Content Include="Content\Fonts\css\all.css" />
+    <Content Include="Content\Fonts\css\all.min.css" />
+    <Content Include="Content\Fonts\css\brands.css" />
+    <Content Include="Content\Fonts\css\brands.min.css" />
+    <Content Include="Content\Fonts\css\fontawesome.css" />
+    <Content Include="Content\Fonts\css\fontawesome.min.css" />
+    <Content Include="Content\Fonts\css\otrosEstilos.css" />
+    <Content Include="Content\Fonts\css\regular.css" />
+    <Content Include="Content\Fonts\css\regular.min.css" />
+    <Content Include="Content\Fonts\css\solid.css" />
+    <Content Include="Content\Fonts\css\solid.min.css" />
+    <Content Include="Content\Fonts\css\svg-with-js.css" />
+    <Content Include="Content\Fonts\css\svg-with-js.min.css" />
+    <Content Include="Content\Fonts\css\v4-font-face.css" />
+    <Content Include="Content\Fonts\css\v4-font-face.min.css" />
+    <Content Include="Content\Fonts\css\v4-shims.css" />
+    <Content Include="Content\Fonts\css\v4-shims.min.css" />
+    <Content Include="Content\Fonts\css\v5-font-face.css" />
+    <Content Include="Content\Fonts\css\v5-font-face.min.css" />
+    <Content Include="Images\pucp.png" />
+    <Content Include="Scripts\bootstrap.bundle.js" />
+    <Content Include="Scripts\bootstrap.bundle.min.js" />
+    <Content Include="Scripts\bootstrap.esm.js" />
+    <Content Include="Scripts\bootstrap.esm.min.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Images\LogoGesmed.png" />
+    <None Include="Connected Services\GesmedWS\RepresentanteMedicoWS.wsdl" />
+    <None Include="Connected Services\GesmedWS\SupervisorWS.wsdl" />
+    <None Include="Connected Services\GesmedWS\SupervisorWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GesmedWS\UbicacionWS.wsdl" />
+    <None Include="Connected Services\GesmedWS\UbicacionWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GesmedWS\UsuarioWS.wsdl" />
+    <None Include="Connected Services\GesmedWS\UsuarioWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Connected Services\GesmedWS\VisitaWS.wsdl" />
+    <None Include="Connected Services\GesmedWS\VisitaWS.xsd">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Scripts\jquery-3.7.1.intellisense.js" />
+    <Content Include="Scripts\jquery-3.7.1.js" />
+    <Content Include="Scripts\jquery-3.7.1.min.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.js" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.js" />
+    <Content Include="Scripts\Visitas.js" />
+    <Content Include="Views\Login\Login.aspx" />
+    <Content Include="Views\Login\Logout.aspx" />
+    <Content Include="Views\Recursos\GestionDoctores.aspx" />
+    <Content Include="Views\Recursos\GestionFarmacias.aspx" />
+    <Content Include="Views\Recursos\GestionRepresentantes.aspx" />
+    <Content Include="Views\Recursos\GestionSupervisores.aspx" />
+    <Content Include="Views\Recursos\VisitasRepresentantes.aspx" />
+    <Content Include="Views\Ventas\GestionVisitas.aspx" />
+    <Content Include="Views\Inicio\Home.aspx" />
+    <Content Include="Views\Recursos\ListaClientes.aspx" />
+    <Content Include="Views\Recursos\ListaRepresentantes.aspx" />
+    <Content Include="Views\Recursos\ListaSupervisores.aspx" />
+    <Content Include="Views\Ventas\ListaVisitas.aspx" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="admin.Master.cs">
+      <DependentUpon>admin.Master</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="admin.Master.designer.cs">
+      <DependentUpon>admin.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\GesmedWS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Views\Login\Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Login\Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Login\Logout.aspx.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Login\Logout.aspx.designer.cs">
+      <DependentUpon>Logout.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Recursos\GestionDoctores.aspx.cs">
+      <DependentUpon>GestionDoctores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Recursos\GestionDoctores.aspx.designer.cs">
+      <DependentUpon>GestionDoctores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Recursos\GestionFarmacias.aspx.cs">
+      <DependentUpon>GestionFarmacias.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Recursos\GestionFarmacias.aspx.designer.cs">
+      <DependentUpon>GestionFarmacias.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Recursos\GestionRepresentantes.aspx.cs">
+      <DependentUpon>GestionRepresentantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Recursos\GestionRepresentantes.aspx.designer.cs">
+      <DependentUpon>GestionRepresentantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Recursos\GestionSupervisores.aspx.cs">
+      <DependentUpon>GestionSupervisores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Recursos\GestionSupervisores.aspx.designer.cs">
+      <DependentUpon>GestionSupervisores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Recursos\VisitasRepresentantes.aspx.cs">
+      <DependentUpon>VisitasRepresentantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Recursos\VisitasRepresentantes.aspx.designer.cs">
+      <DependentUpon>VisitasRepresentantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Ventas\GestionVisitas.aspx.cs">
+      <DependentUpon>GestionVisitas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Ventas\GestionVisitas.aspx.designer.cs">
+      <DependentUpon>GestionVisitas.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Inicio\Home.aspx.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Inicio\Home.aspx.designer.cs">
+      <DependentUpon>Home.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Recursos\ListaClientes.aspx.cs">
+      <DependentUpon>ListaClientes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Recursos\ListaClientes.aspx.designer.cs">
+      <DependentUpon>ListaClientes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Recursos\ListaRepresentantes.aspx.cs">
+      <DependentUpon>ListaRepresentantes.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Recursos\ListaRepresentantes.aspx.designer.cs">
+      <DependentUpon>ListaRepresentantes.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Recursos\ListaSupervisores.aspx.cs">
+      <DependentUpon>ListaSupervisores.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Recursos\ListaSupervisores.aspx.designer.cs">
+      <DependentUpon>ListaSupervisores.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Ventas\ListaVisitas.aspx.cs">
+      <DependentUpon>ListaVisitas.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Ventas\ListaVisitas.aspx.designer.cs">
+      <DependentUpon>ListaVisitas.aspx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin.Master" />
+    <Content Include="Content\bootstrap.rtl.min.css.map" />
+    <Content Include="Content\bootstrap.rtl.css.map" />
+    <Content Include="Content\bootstrap.min.css.map" />
+    <Content Include="Content\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.rtl.css.map" />
+    <Content Include="Content\bootstrap-utilities.min.css.map" />
+    <Content Include="Content\bootstrap-utilities.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.rtl.css.map" />
+    <Content Include="Content\bootstrap-reboot.min.css.map" />
+    <Content Include="Content\bootstrap-reboot.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.min.css.map" />
+    <Content Include="Content\bootstrap-grid.rtl.css.map" />
+    <Content Include="Content\bootstrap-grid.min.css.map" />
+    <Content Include="Content\bootstrap-grid.css.map" />
+    <Content Include="Content\Fonts\webfonts\fa-brands-400.ttf" />
+    <Content Include="Content\Fonts\webfonts\fa-brands-400.woff2" />
+    <Content Include="Content\Fonts\webfonts\fa-regular-400.ttf" />
+    <Content Include="Content\Fonts\webfonts\fa-regular-400.woff2" />
+    <Content Include="Content\Fonts\webfonts\fa-solid-900.ttf" />
+    <Content Include="Content\Fonts\webfonts\fa-solid-900.woff2" />
+    <Content Include="Content\Fonts\webfonts\fa-v4compatibility.ttf" />
+    <Content Include="Content\Fonts\webfonts\fa-v4compatibility.woff2" />
+    <None Include="packages.config" />
+    <Content Include="Scripts\bootstrap.min.js.map" />
+    <Content Include="Scripts\bootstrap.js.map" />
+    <Content Include="Scripts\bootstrap.esm.min.js.map" />
+    <Content Include="Scripts\bootstrap.esm.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.min.js.map" />
+    <Content Include="Scripts\bootstrap.bundle.js.map" />
+    <Content Include="Scripts\jquery-3.7.1.min.map" />
+    <Content Include="Scripts\jquery-3.7.1.slim.min.map" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\GesmedWS\" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>52930</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>https://localhost:44318/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>Este proyecto hace referencia a los paquetes NuGet que faltan en este equipo. Use la restauración de paquetes NuGet para descargarlos. Para obtener más información, consulte http://go.microsoft.com/fwlink/?LinkID=322105. El archivo que falta es {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

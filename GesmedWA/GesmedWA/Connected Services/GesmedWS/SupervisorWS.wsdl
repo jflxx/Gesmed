@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://services.gesmed.pucp.edu.pe" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="SupervisorWS" targetNamespace="https://services.gesmed.pucp.edu.pe" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/GesmedWS/SupervisorWS?xsd=1" namespace="https://services.gesmed.pucp.edu.pe" />
+    </xsd:schema>
+  </types>
+  <message name="eliminarSupervisor">
+    <part name="parameters" element="tns:eliminarSupervisor" />
+  </message>
+  <message name="eliminarSupervisorResponse">
+    <part name="parameters" element="tns:eliminarSupervisorResponse" />
+  </message>
+  <message name="insertarSupervisor">
+    <part name="parameters" element="tns:insertarSupervisor" />
+  </message>
+  <message name="insertarSupervisorResponse">
+    <part name="parameters" element="tns:insertarSupervisorResponse" />
+  </message>
+  <message name="listarSupervisores">
+    <part name="parameters" element="tns:listarSupervisores" />
+  </message>
+  <message name="listarSupervisoresResponse">
+    <part name="parameters" element="tns:listarSupervisoresResponse" />
+  </message>
+  <message name="actualizarSupervisor">
+    <part name="parameters" element="tns:actualizarSupervisor" />
+  </message>
+  <message name="actualizarSupervisorResponse">
+    <part name="parameters" element="tns:actualizarSupervisorResponse" />
+  </message>
+  <message name="obtenerSupervisorXID">
+    <part name="parameters" element="tns:obtenerSupervisorXID" />
+  </message>
+  <message name="obtenerSupervisorXIDResponse">
+    <part name="parameters" element="tns:obtenerSupervisorXIDResponse" />
+  </message>
+  <message name="listarSupervisorPorNombreOApellido">
+    <part name="parameters" element="tns:listarSupervisorPorNombreOApellido" />
+  </message>
+  <message name="listarSupervisorPorNombreOApellidoResponse">
+    <part name="parameters" element="tns:listarSupervisorPorNombreOApellidoResponse" />
+  </message>
+  <message name="ListarSupervisorBriefXNombre">
+    <part name="parameters" element="tns:ListarSupervisorBriefXNombre" />
+  </message>
+  <message name="ListarSupervisorBriefXNombreResponse">
+    <part name="parameters" element="tns:ListarSupervisorBriefXNombreResponse" />
+  </message>
+  <portType name="SupervisorWS">
+    <operation name="eliminarSupervisor">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/SupervisorWS/eliminarSupervisorRequest" message="tns:eliminarSupervisor" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/SupervisorWS/eliminarSupervisorResponse" message="tns:eliminarSupervisorResponse" />
+    </operation>
+    <operation name="insertarSupervisor">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/SupervisorWS/insertarSupervisorRequest" message="tns:insertarSupervisor" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/SupervisorWS/insertarSupervisorResponse" message="tns:insertarSupervisorResponse" />
+    </operation>
+    <operation name="listarSupervisores">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/SupervisorWS/listarSupervisoresRequest" message="tns:listarSupervisores" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/SupervisorWS/listarSupervisoresResponse" message="tns:listarSupervisoresResponse" />
+    </operation>
+    <operation name="actualizarSupervisor">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/SupervisorWS/actualizarSupervisorRequest" message="tns:actualizarSupervisor" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/SupervisorWS/actualizarSupervisorResponse" message="tns:actualizarSupervisorResponse" />
+    </operation>
+    <operation name="obtenerSupervisorXID">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/SupervisorWS/obtenerSupervisorXIDRequest" message="tns:obtenerSupervisorXID" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/SupervisorWS/obtenerSupervisorXIDResponse" message="tns:obtenerSupervisorXIDResponse" />
+    </operation>
+    <operation name="listarSupervisorPorNombreOApellido">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/SupervisorWS/listarSupervisorPorNombreOApellidoRequest" message="tns:listarSupervisorPorNombreOApellido" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/SupervisorWS/listarSupervisorPorNombreOApellidoResponse" message="tns:listarSupervisorPorNombreOApellidoResponse" />
+    </operation>
+    <operation name="ListarSupervisorBriefXNombre">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/SupervisorWS/ListarSupervisorBriefXNombreRequest" message="tns:ListarSupervisorBriefXNombre" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/SupervisorWS/ListarSupervisorBriefXNombreResponse" message="tns:ListarSupervisorBriefXNombreResponse" />
+    </operation>
+  </portType>
+  <binding name="SupervisorWSPortBinding" type="tns:SupervisorWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="eliminarSupervisor">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="insertarSupervisor">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarSupervisores">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="actualizarSupervisor">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="obtenerSupervisorXID">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarSupervisorPorNombreOApellido">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="ListarSupervisorBriefXNombre">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="SupervisorWS">
+    <port name="SupervisorWSPort" binding="tns:SupervisorWSPortBinding">
+      <soap:address location="http://localhost:8080/GesmedWS/SupervisorWS" />
+    </port>
+  </service>
+</definitions>

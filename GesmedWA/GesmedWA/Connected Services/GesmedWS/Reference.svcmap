@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" ID="b85fce52-1b05-4f23-a07d-8d47445fc6aa" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
+    <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings />
+    <GenerateSerializableTypes>true</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost:8080/GesmedWS/servicios.disco" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="MedicoWS1.xsd" MetadataType="Schema" ID="503ea550-5394-4d0e-9690-210739c797a1" SourceId="1" SourceUrl="http://localhost:8080/GesmedWS/MedicoWS?xsd=1" />
+    <MetadataFile FileName="ReporteWS1.wsdl" MetadataType="Wsdl" ID="0ec9ec27-78fc-4b6c-9bf9-fe9fdab1072d" SourceId="1" SourceUrl="http://localhost:8080/GesmedWS/ReporteWS?WSDL" />
+    <MetadataFile FileName="UsuarioWS.wsdl" MetadataType="Wsdl" ID="d3afdbbd-e57d-4c0c-a830-bd3722b0532a" SourceId="1" SourceUrl="http://localhost:8080/GesmedWS/UsuarioWS?WSDL" />
+    <MetadataFile FileName="AdministradorWS.wsdl" MetadataType="Wsdl" ID="0022d950-a1ab-4022-be5d-3d446ef06b62" SourceId="1" SourceUrl="http://localhost:8080/GesmedWS/AdministradorWS?WSDL" />
+    <MetadataFile FileName="FarmaciaWS1.wsdl" MetadataType="Wsdl" ID="b69332ea-6053-4f5c-8995-89b9e410d458" SourceId="1" SourceUrl="http://localhost:8080/GesmedWS/FarmaciaWS?WSDL" />
+    <MetadataFile FileName="ClienteWS1.wsdl" MetadataType="Wsdl" ID="cded4b03-7fd8-430a-b7ee-4eddec56692c" SourceId="1" SourceUrl="http://localhost:8080/GesmedWS/ClienteWS?WSDL" />
+    <MetadataFile FileName="RepresentanteMedicoWS.wsdl" MetadataType="Wsdl" ID="ba551237-bce6-4ce4-a56d-78bfea338c79" SourceId="1" SourceUrl="http://localhost:8080/GesmedWS/RepresentanteMedicoWS?WSDL" />
+    <MetadataFile FileName="MedicoWS1.wsdl" MetadataType="Wsdl" ID="1a33d5e9-a74b-47af-9708-23999fb28dcb" SourceId="1" SourceUrl="http://localhost:8080/GesmedWS/MedicoWS?WSDL" />
+    <MetadataFile FileName="ReporteWS1.xsd" MetadataType="Schema" ID="7358fc93-2f36-4aca-9144-970039635d1d" SourceId="1" SourceUrl="http://localhost:8080/GesmedWS/ReporteWS?xsd=1" />
+    <MetadataFile FileName="VisitaWS.xsd" MetadataType="Schema" ID="226f2e5d-d929-4c2a-af1c-25b660e18350" SourceId="1" SourceUrl="http://localhost:8080/GesmedWS/VisitaWS?xsd=1" />
+    <MetadataFile FileName="SupervisorWS.wsdl" MetadataType="Wsdl" ID="7fa99149-9003-48bf-abc4-1cc78857e69a" SourceId="1" SourceUrl="http://localhost:8080/GesmedWS/SupervisorWS?WSDL" />
+    <MetadataFile FileName="FarmaciaWS1.xsd" MetadataType="Schema" ID="717e1277-3496-43c1-9787-762ccffdb6d8" SourceId="1" SourceUrl="http://localhost:8080/GesmedWS/FarmaciaWS?xsd=1" />
+    <MetadataFile FileName="VisitaWS.wsdl" MetadataType="Wsdl" ID="f37a9fbe-d7c6-4366-bfbb-e875ff7a60b3" SourceId="1" SourceUrl="http://localhost:8080/GesmedWS/VisitaWS?WSDL" />
+    <MetadataFile FileName="SupervisorWS.xsd" MetadataType="Schema" ID="7cd60c15-9fa1-4e4c-ab3a-f61c19ec6417" SourceId="1" SourceUrl="http://localhost:8080/GesmedWS/SupervisorWS?xsd=1" />
+    <MetadataFile FileName="UsuarioWS.xsd" MetadataType="Schema" ID="2a20244e-9598-47cc-bc90-d129603b24d2" SourceId="1" SourceUrl="http://localhost:8080/GesmedWS/UsuarioWS?xsd=1" />
+    <MetadataFile FileName="servicios.disco" MetadataType="Disco" ID="b5e7b257-40e4-4fec-9242-e075b55fc090" SourceId="1" SourceUrl="http://localhost:8080/GesmedWS/servicios.disco" />
+    <MetadataFile FileName="ClienteWS1.xsd" MetadataType="Schema" ID="3ed1530c-e98c-4c0f-b7db-4668bd8716e7" SourceId="1" SourceUrl="http://localhost:8080/GesmedWS/ClienteWS?xsd=1" />
+    <MetadataFile FileName="UbicacionWS.wsdl" MetadataType="Wsdl" ID="4b23de09-165f-4b03-b2c6-3447fe93e4b0" SourceId="1" SourceUrl="http://localhost:8080/GesmedWS/UbicacionWS?WSDL" />
+    <MetadataFile FileName="AdministradorWS.xsd" MetadataType="Schema" ID="8d2f7e85-e5aa-4b59-a1ae-edea77bd59de" SourceId="1" SourceUrl="http://localhost:8080/GesmedWS/AdministradorWS?xsd=1" />
+    <MetadataFile FileName="RepresentanteMedicoWS.xsd" MetadataType="Schema" ID="0e00d109-7837-4f2f-a122-12a34ad77a21" SourceId="1" SourceUrl="http://localhost:8080/GesmedWS/RepresentanteMedicoWS?xsd=1" />
+    <MetadataFile FileName="UbicacionWS.xsd" MetadataType="Schema" ID="9c71541a-b125-4950-95d7-b72a92b3c06f" SourceId="1" SourceUrl="http://localhost:8080/GesmedWS/UbicacionWS?xsd=1" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

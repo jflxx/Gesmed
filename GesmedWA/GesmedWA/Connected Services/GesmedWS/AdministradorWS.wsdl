@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<definitions xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:wsp="http://www.w3.org/ns/ws-policy" xmlns:wsp1_2="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="https://services.gesmed.pucp.edu.pe" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" name="AdministradorWS" targetNamespace="https://services.gesmed.pucp.edu.pe" xmlns="http://schemas.xmlsoap.org/wsdl/">
+  <types>
+    <xsd:schema>
+      <xsd:import schemaLocation="http://localhost:8080/GesmedWS/AdministradorWS?xsd=1" namespace="https://services.gesmed.pucp.edu.pe" />
+    </xsd:schema>
+  </types>
+  <message name="ListarAdministradorXNombre">
+    <part name="parameters" element="tns:ListarAdministradorXNombre" />
+  </message>
+  <message name="ListarAdministradorXNombreResponse">
+    <part name="parameters" element="tns:ListarAdministradorXNombreResponse" />
+  </message>
+  <message name="listarAdministradores">
+    <part name="parameters" element="tns:listarAdministradores" />
+  </message>
+  <message name="listarAdministradoresResponse">
+    <part name="parameters" element="tns:listarAdministradoresResponse" />
+  </message>
+  <portType name="AdministradorWS">
+    <operation name="ListarAdministradorXNombre">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/AdministradorWS/ListarAdministradorXNombreRequest" message="tns:ListarAdministradorXNombre" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/AdministradorWS/ListarAdministradorXNombreResponse" message="tns:ListarAdministradorXNombreResponse" />
+    </operation>
+    <operation name="listarAdministradores">
+      <input wsam:Action="https://services.gesmed.pucp.edu.pe/AdministradorWS/listarAdministradoresRequest" message="tns:listarAdministradores" />
+      <output wsam:Action="https://services.gesmed.pucp.edu.pe/AdministradorWS/listarAdministradoresResponse" message="tns:listarAdministradoresResponse" />
+    </operation>
+  </portType>
+  <binding name="AdministradorWSPortBinding" type="tns:AdministradorWS">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <operation name="ListarAdministradorXNombre">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+    <operation name="listarAdministradores">
+      <soap:operation soapAction="" />
+      <input>
+        <soap:body use="literal" />
+      </input>
+      <output>
+        <soap:body use="literal" />
+      </output>
+    </operation>
+  </binding>
+  <service name="AdministradorWS">
+    <port name="AdministradorWSPort" binding="tns:AdministradorWSPortBinding">
+      <soap:address location="http://localhost:8080/GesmedWS/AdministradorWS" />
+    </port>
+  </service>
+</definitions>

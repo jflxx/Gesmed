@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:tns="https://services.gesmed.pucp.edu.pe" targetNamespace="https://services.gesmed.pucp.edu.pe" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="Exception" type="tns:Exception" />
+  <xs:element name="actualizarUbicacion" type="tns:actualizarUbicacion" />
+  <xs:element name="actualizarUbicacionResponse" type="tns:actualizarUbicacionResponse" />
+  <xs:element name="eliminarUbicacion" type="tns:eliminarUbicacion" />
+  <xs:element name="eliminarUbicacionResponse" type="tns:eliminarUbicacionResponse" />
+  <xs:element name="insertarUbicacion" type="tns:insertarUbicacion" />
+  <xs:element name="insertarUbicacionResponse" type="tns:insertarUbicacionResponse" />
+  <xs:element name="listarUbicacion" type="tns:listarUbicacion" />
+  <xs:element name="listarUbicacionResponse" type="tns:listarUbicacionResponse" />
+  <xs:complexType name="listarUbicacion">
+    <xs:sequence />
+  </xs:complexType>
+  <xs:complexType name="listarUbicacionResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="return" type="tns:ubicacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="ubicacion">
+    <xs:sequence>
+      <xs:element name="altitud" type="xs:double" />
+      <xs:element name="idUbicacion" type="xs:int" />
+      <xs:element name="latitud" type="xs:double" />
+      <xs:element name="longitud" type="xs:double" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="Exception">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="message" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarUbicacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ubicacion" type="tns:ubicacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="actualizarUbicacionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarUbicacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ubicacion" type="tns:ubicacion" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="insertarUbicacionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarUbicacion">
+    <xs:sequence>
+      <xs:element name="idUbicacion" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="eliminarUbicacionResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:int" />
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
